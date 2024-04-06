@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>{{ header }}</title>
+</head>
+<body>
+    <h1>Welcome! You are in {{ header }}</h1>
+    <h3>{{ message }}</h3>
+    <ol>
+        {% for item in games %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ol>
+    <p>template/firstapp/home.html</p>
+    <p><b>Current date and time: </b>{{ date }}</p>
+</body>
+</html>
