@@ -6,6 +6,5 @@ urlpatterns = [
     path('', index, name='index'),
     path('about/', about, name='about'),
     path('contacts', contacts, name='contacts'),
-    path('forms', my_form, name='forms'),
-]
-
+    path('forms', my_form, name='forms')
+    ]
