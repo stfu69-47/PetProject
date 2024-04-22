@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$/new" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../pyneng-examples-exercises" vcs="Git" />
   </component>
 </project>

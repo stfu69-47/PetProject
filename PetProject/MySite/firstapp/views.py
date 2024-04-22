@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import *
 
@@ -24,9 +24,11 @@ def my_form(request):
     if request.method == 'POST':
         userform = UserForm(request.POST)
         if userform.is_valid():
-            name = userform.cleaned_data.get('name')
-            age = userform.cleaned_data.get('age')
-            return HttpResponse(f'<h2>Name and age are corrected - {name}, {age} years old.</h2>')
+            # name = userform.cleaned_data.get('name')
+            # age = userform.cleaned_data.get('age')
+            # return HttpResponse(f'<h2>Name and age are corrected - {name}, {age} years old.</h2>')
+            userform.save()
+            return redirect('index')
     userform = UserForm()
     context = {
         'form': userform
