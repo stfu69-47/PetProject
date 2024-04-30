@@ -2,8 +2,10 @@ from django.db import models
 
 
 class Person(models.Model):
-    name = models.CharField(max_length=25)
-    age = models.IntegerField()
+    name = models.CharField(max_length=25, verbose_name="Name of user")
+    age = models.IntegerField(verbose_name="Age of the user")
+    object_person = models.Manager()
+    DoesNotExist = models.Manager
 
 
 class Company(models.Model):

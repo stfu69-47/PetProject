@@ -6,6 +6,11 @@
         <div class="row">
             <div class="col text-center text-dark">
                 <div>{{ my_text }}</div>
+                {% if people_quantity > 0 %}
+                    <h5>
+                        Number of register users: {{ people_quantity }}
+                    </h5>
+                {% endif %}
             </div>
         </div>
     </div>
