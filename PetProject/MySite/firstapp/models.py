@@ -36,3 +36,12 @@ class Account(models.Model):
     password = models.CharField(max_length=20)
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
 
+
+class Image(models.Model):
+    title = models.CharField(max_length=100, null=False, verbose_name='Description of image')
+    image = models.ImageField(upload_to='images', null=True, blank=True, verbose_name='Work with images')
+    obj_img = models.Manager()
+
+    def __str__(self):
+        return self.title
+
