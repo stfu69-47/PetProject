@@ -45,3 +45,11 @@ class Image(models.Model):
     def __str__(self):
         return self.title
 
+
+class File(models.Model):
+    title = models.CharField(max_length=100, verbose_name='Description of file')
+    file = models.FileField(upload_to='files', null=True, blank=True, verbose_name='File PDF')
+
+    def __str__(self):
+        return self.title
+    
