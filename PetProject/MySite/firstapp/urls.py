@@ -9,4 +9,6 @@ urlpatterns = [
     path('forms', my_form, name='forms'),
     path('edit_form/<int:user_id>/', edit_form, name='edit_form'),
     path('my_form/delete/<int:user_id>/', delete, name='delete'),
+    path('form_up_img/', form_up_img, name='form_up_img'),
+    path('form_up_img/delete_img/<int:img_id>/', delete_img, name='delete_img'),
     ]

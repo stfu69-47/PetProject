@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'firstapp',
     'django_bootstrap5',
     'django_extensions',
+    'django_cleanup',
 ]
 
 MIDDLEWARE = [

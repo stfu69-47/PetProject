@@ -58,3 +58,28 @@ def my_form(request):
         'people_quantity': people_quantity,
     }
     return render(request, 'firstapp/my_form.html', context)
+
+
+def form_up_img(request):
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+    my_text = 'Saved images'
+    my_img = Image.obj_img.all()
+    form = ImageForm()
+    context = {
+        'my_text': my_text,
+        'my_img': my_img,
+        'form': form,
+    }
+    return render(request, 'firstapp/form_up_img.html', context)
+
+
+def delete_img(request, img_id):
+    try:
+        img = Image.obj_img.get(id=img_id)
+        img.delete()
+        return redirect('firstapp/form_up_img.html')
+    except Person.DoesNotExist:
+        return HttpResponseNotFound('<h2>Object not found</h2>')
